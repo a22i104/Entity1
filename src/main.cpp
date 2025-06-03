@@ -4,6 +4,7 @@
 
 #include "scene.h"
 #include "player.h"
+#include "child.h"
 
 int main()
 {
@@ -15,16 +16,16 @@ int main()
 	Player* player2 = new Player();
 	player2->SetName("Player2");
 
-	Player* child1 = new Player();
+	Child* child1 = new Child();
 	child1->SetName("Player1Child1");
 
-	Player* child2 = new Player();
+	Child* child2 = new Child();
 	child2->SetName("Player2Child1");
 
-	Player* child1_2 = new Player();
+	Child* child1_2 = new Child();
 	child1_2->SetName("GAKIGAKI");
 
-	Player* child2_2 = new Player();
+	Child* child2_2 = new Child();
 	child2_2->SetName("2GAKIGAKI");
 
 
