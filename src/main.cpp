@@ -5,9 +5,26 @@
 #include "scene.h"
 #include "player.h"
 #include "child.h"
+#include "list.h"
+
+
 
 int main()
 {
+
+	List<int> myList;
+
+	myList.push_back(10);
+	myList.push_front(5);
+	myList.push_back(20);
+	myList.node_print();  
+
+	myList.pop_front();
+	myList.node_print(); 
+
+	myList.pop_back();
+	myList.node_print();
+
 	Scene* scene = new Scene();
 
 	Player* player = new Player();
@@ -61,5 +78,7 @@ int main()
 		std::this_thread::sleep_until(next_frame);
 	}
 
-	return 0;
+	
+	
+
 }
