@@ -46,7 +46,8 @@ template <typename T>
 void List<T>::push_back(const T& value) {
     Node* newNode = new Node(value);
     if (!btm) {
-        top = btm = newNode;
+        btm = newNode;
+        top = newNode;
     }
     else {
         btm->next = newNode;
@@ -60,7 +61,8 @@ template <typename T>
 void List<T>::push_front(const T& value) {
     Node* newNode = new Node(value);
     if (!top) {
-        top = btm = newNode;
+        btm =newNode;
+        top =newNode;
     }
     else {
         newNode->next = top;
@@ -72,12 +74,13 @@ void List<T>::push_front(const T& value) {
 
 template <typename T>
 void List<T>::pop_back() {
-    if (!btm) return;
     Node* temp = btm;
-    if (top == btm) {
-        top = btm = nullptr;
+    if(top==btm){
+        top = nullptr;
+        btm = nullptr;
     }
-    else {
+    else
+    {
         btm = btm->prev;
         btm->next = nullptr;
     }
@@ -87,10 +90,11 @@ void List<T>::pop_back() {
 
 template <typename T>
 void List<T>::pop_front() {
-    if (!top) return;
+
     Node* temp = top;
     if (top == btm) {
-        top = btm = nullptr;
+        btm = nullptr;
+        top = nullptr;
     }
     else {
         top = top->next;

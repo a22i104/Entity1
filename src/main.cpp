@@ -17,12 +17,12 @@ int main()
 	myList.push_back(10);
 	myList.push_front(5);
 	myList.push_back(20);
-	myList.node_print();  
-
-	myList.pop_front();
-	myList.node_print(); 
+	myList.node_print();
 
 	myList.pop_back();
+	myList.node_print();
+
+	myList.pop_front();
 	myList.node_print();
 
 	Scene* scene = new Scene();
@@ -78,7 +78,7 @@ int main()
 		std::this_thread::sleep_until(next_frame);
 	}
 
-	
-	
+
+
 
 }
