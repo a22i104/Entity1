@@ -114,4 +114,50 @@ void List<T>::node_print() const {
     std::cout << std::endl;
 }
 
-    //テンプレ7ページ目の続きを作る、リスト末尾の追加、消去、先頭の追加、先頭の消去　プッシュバック、プッシュフロント、ポップバッグ、ポップフロント
+void Ascending(int a,int b) {
+    if(a>b)
+    {
+        int temp = b;
+        b=a;
+        a = temp;
+    }
+}//昇順event1
+
+
+void Descending(int a,int b){
+    if (a < b)
+    {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
+}//降順event2
+
+bool up = false;
+bool down = false;
+
+if()
+int main()
+{
+    int i, j;
+    
+    for (int i = 0;i < size;i++)
+    {
+        for (j = size;j > i;j--)
+        {
+            if (up == true)
+            {
+                Ascending();
+            }
+            else if (down == true)
+            {
+                Descending();
+            }
+
+        }
+    }
+
+
+
+
+};
