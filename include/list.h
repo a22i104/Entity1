@@ -1,7 +1,9 @@
 // list.h
 
 #pragma once
+#include <functional>
 #include <iostream>
+#include <vector>
 
 template <typename T>
 class List {
@@ -26,6 +28,7 @@ public:
     void pop_back();
     void pop_front();
     void node_print() const;
+    void sort(const std::string& str);
 };
 
 
@@ -114,50 +117,33 @@ void List<T>::node_print() const {
     std::cout << std::endl;
 }
 
-void Ascending(int a,int b) {
-    if(a>b)
-    {
-        int temp = b;
-        b=a;
-        a = temp;
+template <typename T>
+void List<T>::sort(const std::string& str) {
+    auto Ascending = [](const T& a, const T& b) {
+        return a > b;
+        };
+    auto Descending = [](const T& a, const T& b) {
+        return a < b;
+        };
+
+    std::function<bool(const T&, const T&)> func;
+
+    if (str == "up") {
+        func = Ascending;
     }
-}//è∏èáevent1
-
-
-void Descending(int a,int b){
-    if (a < b)
-    {
-        int temp = a;
-        a = b;
-        b = temp;
+    else if (str == "down") {
+        func = Descending;
     }
-}//ç~èáevent2
+ 
 
-bool up = false;
-bool down = false;
-
-if()
-int main()
-{
-    int i, j;
-    
-    for (int i = 0;i < size;i++)
-    {
-        for (j = size;j > i;j--)
-        {
-            if (up == true)
-            {
-                Ascending();
+    for (int i = 0; i < size; ++i) {
+        Node* nowNode = top;
+        for (int j = 0; j < size - 1 - i; ++j) {
+            Node* nextNode = nowNode->next;
+            if (func(nowNode->data, nextNode->data)) {
+                std::swap(nowNode->data, nextNode->data);
             }
-            else if (down == true)
-            {
-                Descending();
-            }
-
+            nowNode = nextNode;
         }
     }
-
-
-
-
-};
+}
