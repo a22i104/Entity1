@@ -141,6 +141,7 @@
     <ClInclude Include="include\list.h" />
     <ClInclude Include="include\player.h" />
     <ClInclude Include="include\scene.h" />
+    <ClInclude Include="component.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

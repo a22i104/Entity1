@@ -29,6 +29,7 @@ public:
     void pop_front();
     void node_print() const;
     void sort(const std::string& str);
+    void component();
 };
 
 

@@ -19,11 +19,11 @@ int main()
 	myList.push_back(20);
 	myList.node_print();
 
-	myList.pop_back();
+	myList.sort("down");
 	myList.node_print();
-
-	myList.pop_front();
+	myList.sort("up");
 	myList.node_print();
+	
 
 	Scene* scene = new Scene();
 
